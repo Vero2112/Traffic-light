@@ -6,33 +6,26 @@ const Semaforo = () => {
 	const cambiarcolor = (color) => {
 		setColorseleccionado("luzroja");
 		setInterval(cambionaranja, 1000);
-		setInterval(paro, 6500);
 	};
 
 	const cambionaranja = function displaynaranja() {
 		setColorseleccionado("luznaranja");
-		setInterval(cambioverde, 1000);
-		setInterval(paro, 6000);
+		setInterval(cambioverde, 2000);
 	};
 
 	const cambioverde = function displayverde() {
 		setColorseleccionado("luzverde");
-		const myInterval = setInterval(cambionaranjaroja, 1000);
-		setInterval(paro, 6000);
+		const myInterval = setInterval(cambiosinluz, 2000);
 	};
 
-	const cambionaranjaroja = function displaynaranja() {
-		setColorseleccionado("luznaranja");
-		setInterval(cambioroja, 1000);
-		setInterval(paro, 6000);
-	};
-	const cambioroja = function displayroja() {
-		setColorseleccionado("luzroja");
-		setInterval(paro, 1000);
-	};
-	const paro = function displayparo() {
+	const cambiosinluz = function displayverde() {
 		setColorseleccionado(" ");
+		const myInterval = setInterval(myStopFunction, 2000);
 	};
+	function myStopFunction() {
+		clearInterval(myInterval);
+	}
+
 	return (
 		<div className="center-me">
 			<div className="palosemaforo"></div>
@@ -57,8 +50,12 @@ const Semaforo = () => {
 					}></div>
 			</div>
 
-			<button onClick={cambiarcolor} className="boton">
+			<button onClick={cambiarcolor} className="boton1">
 				Clica para iniciar semáforo
+			</button>
+
+			<button onClick={cambiarcolor} className="boton2">
+				Clica para añadir color
 			</button>
 		</div>
 	);
