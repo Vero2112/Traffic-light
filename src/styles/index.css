@@ -14,9 +14,11 @@
 .luzroja{border-radius: 50%; background-color: red; height: 100px; width: 100px; margin: 20%; }
 .luznaranja{border-radius: 50%; background-color:orange; height: 100px; width: 100px; margin: 20%;}
 .luzverde{border-radius: 50%; background-color: green; height: 100px; width: 100px; margin: 20%;}
+.luzlila{border-radius: 50%; background-color: purple; height: 100px; width: 100px; margin: 20%;}
 .alumbradorojo{box-shadow: 0px 0px 9px 4px red;}
 .alumbradonaranja{box-shadow: 0px 0px 9px 4px orange;}
 .alumbradoverde{box-shadow: 0px 0px 9px 4px green;}
+.alumbradolila{box-shadow: 0px 0px 9px 4px purple;}
 .palosemaforo{height: 150px;background-color: black; width: 50px; margin-left: 75px; }
 .boton1{text-align: center; margin: 5%;}
 .boton2{text-align: center; margin: 5%;}

@@ -26,6 +26,15 @@ const Semaforo = () => {
 		clearInterval(myInterval);
 	}
 
+	// hay que crear componente?
+	const añadircolor = function añadircolor() {
+		<div
+			onClick={() => setColorseleccionado("luzlila")}
+			className={
+				"luzlila " +
+				(colorseleccionado === "luzlila" ? "alumbradolila" : "")
+			}></div>;
+	};
 	return (
 		<div className="center-me">
 			<div className="palosemaforo"></div>
@@ -58,7 +67,7 @@ const Semaforo = () => {
 				Clica para iniciar semáforo
 			</button>
 
-			<button onClick={cambiarcolor} className="boton2">
+			<button onClick={añadircolor} className="boton2">
 				Clica para añadir color
 			</button>
 		</div>
