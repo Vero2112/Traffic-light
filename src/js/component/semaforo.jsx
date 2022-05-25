@@ -5,7 +5,7 @@ const Semaforo = () => {
 	const [colorseleccionado, setColorseleccionado] = useState("null");
 	const cambiarcolor = (color) => {
 		setColorseleccionado("luzroja");
-		setInterval(cambionaranja, 1000);
+		setInterval(cambionaranja, 2000);
 	};
 
 	const cambionaranja = function displaynaranja() {
@@ -34,19 +34,23 @@ const Semaforo = () => {
 					onClick={() => setColorseleccionado("luzroja")}
 					className={
 						"luzroja " +
-						(colorseleccionado === "luzroja" ? "alumbrado" : "")
+						(colorseleccionado === "luzroja" ? "alumbradorojo" : "")
 					}></div>
 				<div
 					onClick={() => setColorseleccionado("luznaranja")}
 					className={
 						"luznaranja " +
-						(colorseleccionado === "luznaranja" ? "alumbrado" : "")
+						(colorseleccionado === "luznaranja"
+							? "alumbradonaranja"
+							: "")
 					}></div>
 				<div
 					onClick={() => setColorseleccionado("luzverde")}
 					className={
 						"luzverde " +
-						(colorseleccionado === "luzverde" ? "alumbrado" : "")
+						(colorseleccionado === "luzverde"
+							? "alumbradoverde"
+							: "")
 					}></div>
 			</div>
 
