@@ -3,7 +3,8 @@ import React, { useState } from "react";
 //create your first component
 const Semaforo = () => {
 	const [colorseleccionado, setColorseleccionado] = useState("null");
-	const [ocultar, setOcultar] = useState("ocultar");
+	const [ocultarlila, setOcultarlila] = useState("ocultarlila");
+	const [ocultarazul, setOcultarazul] = useState("ocultarazul");
 
 	const cambiarcolor = () => {
 		setColorseleccionado("luzroja");
@@ -31,15 +32,77 @@ const Semaforo = () => {
 		clearInterval(myInterval);
 	};
 
-	const añadircolor = () => {
-		setOcultar("");
+	const añadircolorlila = () => {
+		setOcultarlila("");
 	};
 
-	const eliminarcolor = () => {
-		setOcultar("ocultar");
+	const eliminarcolorlila = () => {
+		setOcultarlila("ocultarlila");
+	};
+
+	const añadircolorazul = () => {
+		setOcultarazul("");
+	};
+
+	const eliminarcolorazul = () => {
+		setOcultarazul("ocultarazul");
 	};
 	return (
 		<div>
+			<div className="dropdown bg-dark p-3 text-end">
+				<button
+					className="btn btn-light dropdown-toggle"
+					type="button"
+					id="dropdownMenuButton1"
+					data-bs-toggle="dropdown"
+					aria-expanded="false">
+					Acciones semáforo
+				</button>
+				<ul
+					className="dropdown-menu"
+					aria-labelledby="dropdownMenuButton1">
+					<li>
+						<a
+							className="dropdown-item"
+							href="#"
+							onClick={cambiarcolor}>
+							Clica para iniciar semáforo
+						</a>
+					</li>
+					<li>
+						<a
+							className="dropdown-item"
+							href="#"
+							onClick={añadircolorlila}>
+							Clica para añadir color lila
+						</a>
+					</li>
+					<li>
+						<a
+							className="dropdown-item"
+							href="#"
+							onClick={eliminarcolorlila}>
+							Clica para eliminar color lila
+						</a>
+					</li>
+					<li>
+						<a
+							className="dropdown-item"
+							href="#"
+							onClick={añadircolorazul}>
+							Clica para añadir color azul
+						</a>
+					</li>
+					<li>
+						<a
+							className="dropdown-item"
+							href="#"
+							onClick={eliminarcolorazul}>
+							Clica para eliminar color azul
+						</a>
+					</li>
+				</ul>
+			</div>
 			<div className="center-me">
 				<div className="palosemaforo"></div>
 				<div className="semaforo">
@@ -70,31 +133,24 @@ const Semaforo = () => {
 					<div
 						onClick={() => setColorseleccionado("luzlila")}
 						className={
-							ocultar +
+							ocultarlila +
 							" luzlila " +
 							(colorseleccionado === "luzlila"
 								? "alumbradolila"
 								: "")
 						}></div>
+					<div
+						onClick={() => setColorseleccionado("luzazul")}
+						className={
+							ocultarazul +
+							" luzazul" +
+							(colorseleccionado === "luzazul"
+								? "alumbradoazul"
+								: "")
+						}></div>
 					;
 				</div>
 			</div>
-
-			<button
-				onClick={cambiarcolor}
-				className="boton1 btn btn-outline-dark position-absolute top-50 start-50 translate-middle">
-				Clica para iniciar semáforo
-			</button>
-			<button
-				onClick={añadircolor}
-				className="boton2 btn btn-outline-dark position-absolute top-50 start-50 translate-middle">
-				Clica para añadir color
-			</button>
-			<button
-				onClick={eliminarcolor}
-				className="boton3 btn btn-outline-dark position-absolute top-50 start-50 translate-middle">
-				Clica para eliminar color
-			</button>
 		</div>
 	);
 };
