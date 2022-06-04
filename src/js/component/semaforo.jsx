@@ -24,6 +24,10 @@ const Semaforo = () => {
 		setColorseleccionado("luzlila");
 		setInterval(cambiosinluz, 2000);
 	};
+	const cambioazul = () => {
+		setColorseleccionado("luzazul");
+		setInterval(cambiosinluz, 2000);
+	};
 	const cambiosinluz = () => {
 		setColorseleccionado(" ");
 		setInterval(myStopFunction, 2000);
